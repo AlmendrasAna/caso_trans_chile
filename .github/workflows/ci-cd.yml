@@ -1,0 +1,54 @@
+# .github/workflows/ci-cd.yml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js (ajusta según tu stack)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: Instalar Trivy plugin para SonarQube
+        run: |
+          pip install --upgrade pip
+          pip install requests
+          trivy plugin install github.com/umax/trivy-plugin-sonarqube
+
+      - name: Escanear con Trivy y generar reporte JSON
+        run: |
+          trivy fs --format=json --output=trivy-report.json .
+
+      - name: Convertir reporte Trivy a formato SonarQube
+        run: |
+          trivy sonarqube trivy-report.json > sonar-trivy-report.json
+
+      - name: Ejecutar análisis SonarQube
+        uses: SonarSource/sonarqube-scan-action@v1.1
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.externalIssuesReportPaths=sonar-trivy-report.json
+
+
+
+
+
