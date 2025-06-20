@@ -78,6 +78,26 @@ Este proyecto cuenta con un pipeline de integración y entrega continua (CI/CD) 
 
 Consulta el archivo `.github/workflows/ci-cd.yml` para más detalles.
 
+## 🧪 Análisis de Vulnerabilidades con SonarQube
+Se utiliza **SonarQube** para realizar análisis estático del código, detectando vulnerabilidades, errores y malas prácticas antes de que lleguen a producción.
+
+### 🛡️ Protección de la Infraestructura
+- Escaneo continuo con herramientas como **Trivy**.
+- Aplicación del principio de **menor privilegio** en accesos y credenciales.
+- Separación de entornos (desarrollo, pruebas, producción).
+- Automatización de parches y monitoreo de actividad sospechosa.
+
+### 📦 Gestión de Dependencias Seguras
+El uso de paquetes inseguros puede comprometer todo el sistema. Para prevenirlo:
+- Se escanean dependencias con **OWASP Dependency-Check**.
+- Se mantiene un inventario actualizado de librerías.
+- Se priorizan paquetes con mantenimiento activo y buena reputación.
+- Se configuran alertas ante nuevas vulnerabilidades (CVEs).
+
+---
+
+Este enfoque DevSecOps garantiza que la seguridad no sea un paso final, sino una práctica continua integrada en todo el proceso de desarrollo.
+
 ---
 ## 🧾 Conclusión
 
