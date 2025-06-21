@@ -102,8 +102,7 @@ Este enfoque DevSecOps garantiza que la seguridad no sea un paso final, sino una
 
 La implementación de DevOps en TransChile permitirá modernizar su área tecnológica, reduciendo errores, acelerando las entregas y fortaleciendo la seguridad del software. Esto permitirá abordar problemas clave como la ausencia de control de versiones, la falta de automatización y la escasa calidad del código.
 
-Mediante flujos de trabajo estructurados, integración continua y herramientas de análisis de calidad y seguridad, TransChile podrá mejorar significativamente los tiempos de entrega, la confiabilidad del software y su capacidad de respuesta ante incidentes. Este enfoque permitirá reduciendo errores, acelerando entregas y construyendo una base sólida para la innovación continua.
-
+Mediante flujos de trabajo estructurados, integración continua y herramientas de análisis de calidad y seguridad, TransChile podrá mejorar significativamente los tiempos de entrega, la confiabilidad del software y su capacidad de respuesta ante incidentes.
 
 
 
