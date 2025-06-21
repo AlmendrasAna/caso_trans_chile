@@ -44,7 +44,6 @@ Propuesta de un  flujos de trabajo
 
 ## 🚀 Pipeline CI/CD (Ejemplo GitHub Actions)
 
-El proyecto incluye una plantilla de CI/CD que:
 
 Este proyecto cuenta con un pipeline de integración y entrega continua (CI/CD) configurado en GitHub Actions, que se ejecuta automáticamente en cada `push` o `pull request` hacia la rama `main`.
 
